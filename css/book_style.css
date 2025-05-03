@@ -1,0 +1,181 @@
+.book-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  align-items: flex-start;
+  position: relative; /* Додаємо relative для sticky елементів */
+  overflow: visible; /* Переконайтесь, що overflow не обмежує видимість */
+  height: auto; /* Важливо, щоб контейнер мав достатньо висоти для прокручування */
+  }
+
+  .book-detail h1, h2, strong {
+    color: rgba(215, 120, 255, 1);
+  }
+
+  .book-image {
+    position: sticky; /* Замість fixed використовуйте sticky */
+    top: 100px; /* Відстань від верхнього краю екрану, де елемент має стати фіксованим */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 300px;
+    z-index: 10;
+  }
+  
+  .book-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .book-info {
+    flex: 1;
+  }
+  
+  .book-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .book-author,
+  .book-genre,
+  .book-price {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .book-description {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .add-to-cart {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgba(215, 120, 255, 1);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart:hover {
+    background-color: rgb(203, 82, 255);
+  }
+  
+  .book-table {
+    width: 100%;
+    max-width: 500px;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+  }
+  
+  .book-table td {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+  }
+  
+  .book-table td:first-child {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    width: 30%;
+  }
+
+  .book-image-gallery {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #mainImage {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .thumbnails img {
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+  }
+  
+  .thumbnails img:hover {
+    border-color: #888;
+  }
+
+  .thumbnail {
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .thumbnail.active {
+    opacity: 1;
+    border: 2px solid rgba(215, 120, 255, 1); /* Синій контур для активної картинки */
+  }
+
+  #mainImage {
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 1;
+    transform: scale(1);/
+}
+
+/* Стилі для мініатюр */
+.thumbnail {
+    width: 60px; /* Залишаємо однаковий розмір для всіх мініатюр */
+    height: 60px;
+    margin: 5px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавні переходи */
+}
+
+.thumbnail.active {
+    opacity: 1;
+    transform: scale(1); /* Не збільшуємо активну мініатюру */
+    box-shadow: 0 0 10px rgba(215, 120, 255, 1); /* Тінь для активної мініатюри */
+}
+
+.thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Збільшення мініатюри при наведенні */
+    box-shadow: 0 0 10px rgb(203, 82, 255); /* Тінь при наведенні */
+}
+
+/* Додаткові стилі для зміни зображень */
+.book-image-gallery {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out; /* Додаємо ефект появи */
+}
+
+/* Плавний ефект появи */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

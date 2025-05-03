@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookStore - Каталог</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" href="./img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="all-logo">
+    <a href="./index.html" id="logo-link">
+        <img id="logo" src="./img/favicon.png" alt="logo">
+        <div class="logo"><span>BookStore</span></div>
+      </a>
+    </div>
+    <nav>   
+        <div>
+            <button id="book-category">Категорія книг</button>
+        </div>              
+        <div class="search-container">
+            <svg data-v-336a5a36="" viewBox="0 0 16 16" width="16" height="16" fill="#5B636F" xmlns="http://www.w3.org/2000/svg" class="ui-btn-search__static"><path data-v-336a5a36="" d="M0.770996 6.37891C0.770996 9.66748 3.44434 12.3408 6.73291 12.3408C7.95605 12.3408 9.07666 11.9673 10.0142 11.3301L13.3833 14.6992C13.5884 14.9116 13.874 15.0068 14.1597 15.0068C14.7822 15.0068 15.229 14.5381 15.229 13.9302C15.229 13.6372 15.1265 13.3662 14.9287 13.1611L11.5815 9.80664C12.2773 8.84717 12.6948 7.66064 12.6948 6.37891C12.6948 3.09033 10.0215 0.416992 6.73291 0.416992C3.44434 0.416992 0.770996 3.09033 0.770996 6.37891ZM2.32373 6.37891C2.32373 3.94727 4.29395 1.96973 6.73291 1.96973C9.16455 1.96973 11.1421 3.94727 11.1421 6.37891C11.1421 8.81055 9.16455 10.7881 6.73291 10.7881C4.29395 10.7881 2.32373 8.81055 2.32373 6.37891Z"></path></svg><input type="text" id="searchInput" placeholder="Знайти книгу...">
+            <button id="searchBtn">Пошук</button>
+          </div>
+          <ul class="nav-links">
+            <a href="">
+            <div class="nav-item">
+              <svg width="24px" height="21px" viewBox="0 0 24 21" fill="#5B636F" xmlns="http://www.w3.org/2000/svg" alt="icon" class="ui-btn-shopping-cart__static">
+                <path d="M8.38672 15.5059H19.7539C20.2129 15.5059 20.6133 15.1543 20.6133 14.6465C20.6133 14.1387 20.2129 13.7871 19.7539 13.7871H8.60156C8.12305 13.7871 7.83008 13.4453 7.76172 12.9473L7.61523 11.9316H19.832C21.3164 11.9316 22.0977 11.0234 22.3223 9.54883L23.0547 4.63672C23.0742 4.5 23.0938 4.33398 23.0938 4.23633C23.0938 3.66992 22.6934 3.28906 22.0293 3.28906H6.35547L6.19922 2.21484C6.08203 1.375 5.75 0.945312 4.66602 0.945312H1.30664C0.828125 0.945312 0.408203 1.36523 0.408203 1.86328C0.408203 2.35156 0.828125 2.77148 1.30664 2.77148H4.38281L5.90625 13.1426C6.12109 14.6074 6.90234 15.5059 8.38672 15.5059ZM21.0918 5.00781L20.4668 9.37305C20.3984 9.88086 20.125 10.2031 19.6367 10.2031L7.36133 10.2129L6.60938 5.00781H21.0918ZM9.17773 20.3887C10.125 20.3887 10.8672 19.6367 10.8672 18.6992C10.8672 17.752 10.125 17 9.17773 17C8.24023 17 7.48828 17.752 7.48828 18.6992C7.48828 19.6367 8.24023 20.3887 9.17773 20.3887ZM18.2109 20.3887C19.1582 20.3887 19.9102 19.6367 19.9102 18.6992C19.9102 17.752 19.1582 17 18.2109 17C17.2734 17 16.5117 17.752 16.5117 18.6992C16.5117 19.6367 17.2734 20.3887 18.2109 20.3887Z"></path>
+              </svg>
+              <p>Кошик</p>
+            </div>
+            </a>
+            <a href="./contacts.html">
+            <div class="nav-item">
+              <svg width="14" height="15" viewBox="0 0 14 15" fill="#5B636F" xmlns="http://www.w3.org/2000/svg" class="ui-btn-account-icon">
+                <path d="M7.00781 7.52344C8.89062 7.52344 10.4219 5.85938 10.4219 3.8125C10.4219 1.80469 8.89844 0.195312 7.00781 0.195312C5.125 0.195312 3.57812 1.82031 3.58594 3.82812C3.59375 5.86719 5.11719 7.52344 7.00781 7.52344ZM7.00781 6.17188C5.92188 6.17188 5 5.14844 5 3.82812C5 2.53906 5.91406 1.54688 7.00781 1.54688C8.10156 1.54688 9.00781 2.53125 9.00781 3.8125C9.00781 5.13281 8.09375 6.17188 7.00781 6.17188ZM2.13281 14.7891H11.875C13.2188 14.7891 13.8672 14.3672 13.8672 13.4531C13.8672 11.3125 11.1953 8.4375 7 8.4375C2.80469 8.4375 0.132812 11.3125 0.132812 13.4531C0.132812 14.3672 0.78125 14.7891 2.13281 14.7891ZM1.86719 13.4375C1.6875 13.4375 1.61719 13.3828 1.61719 13.2344C1.61719 12.0391 3.54688 9.78906 7 9.78906C10.4531 9.78906 12.3906 12.0391 12.3906 13.2344C12.3906 13.3828 12.3125 13.4375 12.1328 13.4375H1.86719Z"></path>
+              </svg>
+              <p>Контакти</p>
+            </div>
+            </a>
+          </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <aside class="filters">
+        <section>
+            <form>
+            <fieldset>
+              <legend>Фільтри</legend>
+              <label><input type="checkbox" class="custom-checkbox"> Новинки</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Знижка</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Хід продажу</label>
+            </fieldset>
+      
+            <fieldset>
+              <legend>Тип книги</legend>
+              <label><input type="checkbox" class="custom-checkbox"> Паперова</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Електронна</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Аудіо</label>
+            </fieldset>
+      
+            <fieldset>
+              <legend>Тип обкладинки</legend>
+              <label><input type="checkbox" class="custom-checkbox"> М'яка</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Тверда</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> На спіралі</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Картон</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Коробка</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Шкіряна</label>
+            </fieldset>
+      
+            <fieldset>
+              <legend>Мова</legend>
+              <label><input type="checkbox" class="custom-checkbox"> Українська</label><br>
+              <label><input type="checkbox" class="custom-checkbox"> Англійська</label>
+            </fieldset>
+            </form>
+        </section>
+    </aside>   
+
+    <section class="book-list">
+      <article class="book-card">
+        <a href="./book.html">
+        <img src="./img/вище неба 1.png" alt="Вище неба">
+        <h3 class="book-title">Вище неба Книга 1</h3>
+        <p class="author">Ліз Томфорд</p>
+        <p class="price">440 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/мистецтво війни 1.png" alt="Мистецтво війни">
+        <h3 class="book-title">Мистецтво війни</h3>
+        <p class="author">Сунь-цзи</p>
+        <p class="price">250 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/тінь богів 1.png" alt="Тіль богів">
+        <h3 class="book-title">Тінь богів</h3>
+        <p class="author">Джон Ґвінн</p>
+        <p class="price new">665 грн <s>700 грн</s></p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/без меріт 1.png" alt="Без меріт">
+        <h3 class="book-title">Без Меріт</h3>
+        <p class="author">Коллін Гувер</p>
+        <p class="price">260 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/тисяча памятних 1.png" alt="Тисяча пам'ятних поцілунків">
+        <h3 class="book-title">Тисяча пам'ятних поцілунків</h3>
+        <p class="author">Тіллі Коул</p>
+        <p class="price">295 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/схованка 1.png" alt="Схованка">
+        <h3 class="book-title">Диявольська ніч. Книга 2. Схованка</h3>
+        <p class="author">Пенелопа Дуглас</p>
+        <p class="price">440 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/аделінв 1 1.png" alt="">
+        <h3 class="book-title">Гра в кота і мишу. Книга 1. Переслідування Аделіни</h3>
+        <p class="author">Г. Д. Карлтон</p>
+        <p class="price">370 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+      <article class="book-card">
+        <a href="">
+        <img src="./img/аделіна 2 1.png" alt="Полювання на Аделіну">
+        <h3 class="book-title">Гра в кота і мишу. Книга 2. Полювання Аделіни</h3>
+        <p class="author">Г. Д. Карлтон</p>
+        <p class="price">400 грн</p>
+        <p class="availability">✅ В наявності</p>
+        </a>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BookStore. Всі права захищено.</p>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
