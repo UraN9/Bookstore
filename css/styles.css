@@ -63,7 +63,6 @@
     font-weight: bold;
     color: var(--main-purple);
     font-size: 1.3rem;
-    color: #333; 
   }
   
   nav {
@@ -390,37 +389,158 @@ fieldset:first-of-type legend {
     font-size: 0.9rem;
     color: #777;
   }
+
+  .filter-toggle {
+    display: none;
+  }
+
+  .category-and-filter-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
   
-  /* Мобільна адаптація */
-  @media (max-width: 768px) {
+  .category-button {
+    background-color: #d778ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  @media (max-width: 430px) {
+    #logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      position: relative;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+  
+    .logo {
+      color: rgba(215, 120, 255, 1);
+      font-size: 5px;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      overflow: hidden;
+      margin-right: 150px;
+      font-weight: bold; 
+      flex-direction: column;
+    }
+    
     header {
       flex-direction: column;
       align-items: flex-start;
+      padding: 1rem;
+      flex-direction: column;
     }
   
     nav {
       flex-direction: column;
       align-items: flex-start;
       gap: 1rem;
+    }
+  
+    .search-container input {
       width: 100%;
+      padding: 10px;
+    }
+  
+    .search-container button {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+  
+    .nav-item {
+      margin-right: 0;
+      justify-content: flex-start;
     }
   
     main {
+      display: flex;
       flex-direction: column;
-      padding: 1rem;
     }
   
-    .filters {
+    aside.filters {
       width: 100%;
-      margin-bottom: 1rem;
+      padding: 1rem;
+      box-sizing: border-box;
     }
   
     .book-list {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
     }
   
-    .nav-icons {
-      display: flex;
-      gap: 1rem;
+    .book-card {
+      width: 100%;
     }
+  
+    .book-card img {
+      width: 100%;
+      height: auto;
+    }
+  
+    footer {
+      text-align: center;
+      padding: 1rem;
+    }
+      .filter-toggle {
+        display: block;
+      }
+      
+      .filter-toggle {
+        background-color: #d778ff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    
+      .filters {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        background-color: #f8f8f8;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 100%;
+      }
+    
+      .filters.active {
+        display: flex;
+      }
   }

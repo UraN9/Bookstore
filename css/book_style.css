@@ -1,7 +1,6 @@
 .book-detail {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   padding: 40px;
   max-width: 1000px;
   margin: 0 auto;
@@ -109,6 +108,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 10px; /* Відступ зверху */
   }
   
   .thumbnails img {
@@ -120,41 +120,25 @@
   }
   
   .thumbnails img:hover {
-    border-color: #888;
-  }
-
-  .thumbnail {
-    opacity: 0.6;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
+    border-color: rgba(215, 120, 255, 1);
   }
   
-  .thumbnail.active {
-    opacity: 1;
-    border: 2px solid rgba(215, 120, 255, 1); /* Синій контур для активної картинки */
-  }
-
-  #mainImage {
-    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-    opacity: 1;
-    transform: scale(1);/
-}
-
-/* Стилі для мініатюр */
-.thumbnail {
+  /* Стилі для мініатюр */
+  .thumbnail {
     width: 60px; /* Залишаємо однаковий розмір для всіх мініатюр */
     height: 60px;
     margin: 5px;
     opacity: 0.6;
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Плавні переходи */
-}
+  }
 
-.thumbnail.active {
+  .thumbnail.active {
     opacity: 1;
+    border: 2px solid rgba(215, 120, 255, 1); /* Синій контур для активної картинки */
     transform: scale(1); /* Не збільшуємо активну мініатюру */
     box-shadow: 0 0 10px rgba(215, 120, 255, 1); /* Тінь для активної мініатюри */
-}
+  }
 
 .thumbnail:hover {
     opacity: 1;
@@ -169,13 +153,60 @@
     animation: fadeIn 1s ease-out; /* Додаємо ефект появи */
 }
 
-/* Плавний ефект появи */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрує головне зображення */
 }
 
+.slider-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.slider-container #mainImage {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 400px; /* має відповідати ширині зображення */
+  margin: 0 auto;
+}
+
+.slider-controls button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-controls button:hover {
+  background-color: rgba(200, 200, 200, 0.9);
+}
+
+.thumbnails {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
