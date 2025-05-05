@@ -210,3 +210,21 @@
   gap: 0.5rem;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  #searchInput, #searchBtn, #book-category, .filter-toggle, .search-container {
+    display: none;
+  }
+
+  .nav-links{
+    margin-top: 122px;
+  }
+
+  #logo-link{
+    margin-top: 20px;
+  }
+
+  .all-logo {
+    margin-bottom: 15px;
+  }
+}

@@ -28,10 +28,6 @@
   margin-bottom: 1rem;
 }
 
-.contact-info a {
-    color: #0066cc;
-    text-decoration: none;
-  }
   
   .contact-info a:hover {
     text-decoration: underline;
@@ -41,6 +37,8 @@
     .contact-info {
       padding: 1rem;
       font-size: 0.95rem;
+      width: 92%;
+      margin-top: -10px;
     }
   
     .contact-info h1 {
@@ -49,6 +47,22 @@
   
     .contact-info h2 {
       font-size: 1.2rem;
+    }
+
+    iframe {
+      width: 100%;
+    }
+
+    #searchInput, #searchBtn, #book-category, .filter-toggle {
+      display: none;
+    }
+
+    .nav-links{
+      margin-top: 133px;
+    }
+
+    #logo-link{
+      margin-top: 20px;
     }
   }
   
