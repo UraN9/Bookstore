@@ -1,13 +1,423 @@
 :root {
-    --main-purple: #d68dfc;
-    --light-bg: #f9f6fc;
-    --text-dark: #333;
-    --accent-pink: #e782ff;
-  }
-  
+  --main-purple: #d68dfc;
+  --light-bg: #f9f6fc;
+  --text-dark: #333;
+  --accent-pink: #e782ff;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  color: rgba(215, 120, 255, 1);
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.all-logo {
+  transition: transform 0.3s ease;
+}
+
+.all-logo:hover {
+  transform: translateX(10px); /* зміщуємо на 10px вправо */
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(215, 120, 255, 1) !important;
+}
+
+#logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo span {
+  font-weight: bold;
+  color: var(--main-purple);
+  font-size: 1.3rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.nav-item svg {
+  margin-right: 8px;
+}
+
+.nav-item p {
+  text-decoration: none;
+  color: #5b636f;
+  text-decoration: none;
+  color: inherit; 
+  font-weight: 600;
+}
+
+.nav-links li p {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5B636F;
+  display: inline-block;
+}
+
+.nav-links a:hover {
+  color: #2c2b2b; 
+}
+
+.nav-icons i {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: var(--main-purple);
+  cursor: pointer;
+}
+
+#book-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 12px;
+  background-color:  rgba(215, 120, 255, 1);
+  color: white;
+  width: 150px;
+  font-size: 15px;
+  font-weight: bold; 
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-right: 150px;
+  font-weight: bold; 
+}
+
+.search-container svg {
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+#searchInput {
+  width: 550px;
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  outline: none;
+  border-radius: 30px 0 0 30px;
+}
+
+#searchBtn {
+  padding: 12px 20px;
+  border: none;
+  background-color: rgba(215, 120, 255, 1);
+  color: white;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  transition: background-color 0.2s ease;
+  font-weight: bold; 
+}
+
+#searchBtn:hover {
+  background-color: rgb(203, 82, 255);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+main {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.filters {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 250px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: rgba(247, 240, 251, 1); 
+  border: 1px solid rgba(215, 120, 255, 1);
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+  margin: 5px
+}
+
+label {
+  display: inline-block;
+  line-height: 20px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.filters label {
+  display: inline-block; /* Щоб transform працював коректно */
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.filters label:hover {
+  transform: translateX(5px); /* Зсуває елемент праворуч на 5px */
+  color: #333; /* За бажанням — змінює колір при наведенні */
+}
+
+.custom-checkbox:checked {
+  background-color: rgba(215, 120, 255, 1);
+  border-color: rgba(215, 120, 255, 1);
+}
+
+.custom-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+fieldset {
+border: none;
+padding: 0;
+margin: 0;
+background-color: white;
+}
+
+fieldset:not(:first-of-type) {
+margin-top: 1rem;
+}
+
+legend {
+all: unset;
+display: block;
+width: 100%;
+background-color: #d678f4;
+color: white;
+font-weight: bold;
+font-size: 1.1em;
+text-align: center;
+padding: 0.75em 1em;
+box-sizing: border-box;
+}
+
+fieldset:first-of-type legend {
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.filters fieldset:first-of-type input[type="checkbox"] {
+transform: scale(1.3);
+}
+
+.filters-panel {
+padding: 0; 
+}
+
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.book-list a {
+  text-decoration: none;
+  color: inherit; 
+}
+
+.book-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+  opacity: 1; /* Початково картки мають бути видимими */
+  transform: scale(1); /* Початково картки мають нормальний розмір */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавна анімація для opacity та scale */
+  display: block; /* Обов'язково щоб картки були виведені, навіть якщо вони не видимі */
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Підняття вгору на 5 пікселів */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Додає легку тінь */
+}
+
+.book-card.hidden {
+  opacity: 0; /* Картки зникають */
+  transform: scale(0.9); /* Картки трохи зменшуються */
+  pointer-events: none; /* Вимикаємо взаємодію з картками */
+}
+
+.book-card.visible {
+  opacity: 1; /* Картки будуть повністю видимі */
+  transform: scale(1); /* Збільшуються до нормального розміру */
+}
+
+.book-card.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.book-card.hide {
+  display: none;
+}
+
+.book-card img {
+  height: 280px;
+  width: 190px; 
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.book-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}  
+
+.book-title:hover {
+  white-space: normal;
+  background: #fff;
+  z-index: 10;
+}
+
+
+.price {
+  color: var(--main-purple);
+  font-weight: bold;
+}
+
+.price.new {
+  color: rgba(242, 12, 12, 1);
+  font-weight: bold;
+}
+
+.price.new s {
+  color: rgba(88, 85, 85, 1);
+  font-weight: normal;
+  margin-left: 5px;
+}  
+
+.author{
+  color: rgba(88, 85, 85, 1);
+}
+
+.availability {
+  color: rgba(12, 81, 3, 1);
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.filter-toggle {
+  display: none;
+}
+
+.category-and-filter-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-button {
+  background-color: #d778ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 430px) {
   #logo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
     position: relative;
     display: inline-block;
@@ -16,568 +426,158 @@
 
   .logo {
     color: rgba(215, 120, 255, 1);
-    font-size: 24px;
+    font-size: 5px;
     font-weight: bold;
     position: relative;
     display: inline-block;
     transition: transform 0.3s ease;
-  }
-
-  .all-logo {
-    transition: transform 0.3s ease;
-  }
-  
-  .all-logo:hover {
-    transform: translateX(10px); /* зміщуємо на 10px вправо */
-  }
-
-  .logo span {
-    font-size: 24px;
-    font-weight: bold;
-    color: rgba(215, 120, 255, 1) !important;
-  }
-
-  #logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Rubik', sans-serif;
-    background-color: var(--light-bg);
-    color: var(--text-dark);
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .logo span {
-    font-weight: bold;
-    color: var(--main-purple);
-    font-size: 1.3rem;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-  }
-  
-  .nav-item svg {
-    margin-right: 8px;
-  }
-  
-  .nav-item p {
-    text-decoration: none;
-    color: #5b636f;
-    text-decoration: none;
-    color: inherit; 
-    font-weight: 600;
-  }
-  
-  .nav-links li p {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: #5B636F;
-    display: inline-block;
-  }
-  
-  .nav-links a:hover {
-    color: #2c2b2b; 
-  }
-  
-  .nav-icons i {
-    font-size: 1.2rem;
-    margin-left: 1rem;
-    color: var(--main-purple);
-    cursor: pointer;
-  }
-
-  #book-category {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 30px;
-    overflow: hidden;
-    padding: 12px;
-    background-color:  rgba(215, 120, 255, 1);
-    color: white;
-    width: 150px;
-    font-size: 15px;
-    font-weight: bold; 
   }
 
   .search-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 500px;
+    max-width: 374px;
     border: 1px solid #ccc;
     border-radius: 30px;
     overflow: hidden;
     margin-right: 150px;
     font-weight: bold; 
-  }
-
-  .search-container svg {
-    margin-left: 15px;
-    vertical-align: middle;
-  }
-
-  #searchInput {
-    width: 550px;
-    flex: 1;
-    padding: 12px 15px;
-    border: none;
-    outline: none;
-    border-radius: 30px 0 0 30px;
+    flex-direction: row;
   }
 
   #searchBtn {
-    padding: 12px 20px;
-    border: none;
-    background-color: rgba(215, 120, 255, 1);
-    color: white;
-    cursor: pointer;
-    border-radius: 0 30px 30px 0;
-    transition: background-color 0.2s ease;
-    font-weight: bold; 
-  }
-
-  #searchBtn:hover {
-    background-color: rgb(203, 82, 255);
-  }
-
-  ul {
-    padding-left: 20px;
+    width: 100px;
   }
   
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .search-container input {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search-container button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 10px;
+    position: absolute;
+    margin: 180px;
+    margin-top: 40px;
+  }
+
+  .nav-item {
+    margin-right: 0;
+    justify-content: flex-start;
+  }
+
   main {
     display: flex;
-    padding: 2rem;
-    gap: 2rem;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;      
   }
-  
-  .filters {
-    position: sticky;
-    top: 0;
-    align-self: flex-start;
-    width: 250px;
-    background-color: white;
-    border-radius: 8px;
+
+  aside.filters {
+    width: 100%;
     padding: 1rem;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    box-sizing: border-box;
   }
 
-  .custom-checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    background-color: rgba(247, 240, 251, 1); 
-    border: 1px solid rgba(215, 120, 255, 1);
-    -webkit-appearance: none;
-    appearance: none;
-    position: relative;
-    cursor: pointer;
-    vertical-align: middle;
-    margin: 5px
-  }
-
-  label {
-    display: inline-block;
-    line-height: 20px;
-    padding-left: 5px;
-    cursor: pointer;
-  }
-
-  .filters label {
-    display: inline-block; /* Щоб transform працював коректно */
-    transition: transform 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .filters label:hover {
-    transform: translateX(5px); /* Зсуває елемент праворуч на 5px */
-    color: #333; /* За бажанням — змінює колір при наведенні */
-  }
-
-  .custom-checkbox:checked {
-    background-color: rgba(215, 120, 255, 1);
-    border-color: rgba(215, 120, 255, 1);
-  }
-
-  .custom-checkbox:checked::after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-  }
-
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-  background-color: white;
-}
-
-fieldset:not(:first-of-type) {
-  margin-top: 1rem;
-}
-
-legend {
-  all: unset;
-  display: block;
-  width: 100%;
-  background-color: #d678f4;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1em;
-  text-align: center;
-  padding: 0.75em 1em;
-  box-sizing: border-box;
-}
-
-fieldset:first-of-type legend {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.filters fieldset:first-of-type input[type="checkbox"] {
-  transform: scale(1.3);
-}
-
-.filters-panel {
-  padding: 0; 
-}
-
-  
   .book-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1.5rem;
-    flex: 1;
-  }
-
-  .book-list a {
-    text-decoration: none;
-    color: inherit; 
-  }
-  
-  .book-card {
-    background: white;
-    padding: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    text-align: left;
-    opacity: 1; /* Початково картки мають бути видимими */
-    transform: scale(1); /* Початково картки мають нормальний розмір */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Плавна анімація для opacity та scale */
-    display: block; /* Обов'язково щоб картки були виведені, навіть якщо вони не видимі */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    position: relative;
+    overflow: visible;
+    height: auto;
+    padding: 20px;
+    margin-top: -10px;
   }
 
-  .book-card:hover {
-    transform: translateY(-5px); /* Підняття вгору на 5 пікселів */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Додає легку тінь */
+  .book-card {
+    width: 140px;
   }
 
-  .book-card.hidden {
-    opacity: 0; /* Картки зникають */
-    transform: scale(0.9); /* Картки трохи зменшуються */
-    pointer-events: none; /* Вимикаємо взаємодію з картками */
-  }
-
-  .book-card.visible {
-    opacity: 1; /* Картки будуть повністю видимі */
-    transform: scale(1); /* Збільшуються до нормального розміру */
-  }
-
-  .book-card.show {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .book-card.hide {
-    display: none;
-  }
-  
   .book-card img {
-    height: 280px;
-    width: 190px; 
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 0.5rem;
-  }
-
-  .book-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-  }  
-  
-  .book-title:hover {
-    white-space: normal;
-    background: #fff;
-    z-index: 10;
-  }
-  
-  
-  .price {
-    color: var(--main-purple);
-    font-weight: bold;
-  }
-
-  .price.new {
-    color: rgba(242, 12, 12, 1);
-    font-weight: bold;
-  }
-  
-  .price.new s {
-    color: rgba(88, 85, 85, 1);
-    font-weight: normal;
-    margin-left: 5px;
-  }  
-
-  .author{
-    color: rgba(88, 85, 85, 1);
-  }
-  
-  .availability {
-    color: rgba(12, 81, 3, 1);
-    font-size: 0.9rem;
+    width: 100%;
+    height: 200px;
   }
 
   footer {
     text-align: center;
     padding: 1rem;
-    background: white;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #777;
   }
-
-  .filter-toggle {
-    display: none;
-  }
-
-  .category-and-filter-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .category-button {
-    background-color: #d778ff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    width: 100%;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  @media (max-width: 430px) {
-    #logo {
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
-      position: relative;
-      display: inline-block;
-      transition: transform 0.3s ease;
+    .filter-toggle {
+      display: block;
     }
-  
-    .logo {
-      color: rgba(215, 120, 255, 1);
-      font-size: 5px;
-      font-weight: bold;
-      position: relative;
-      display: inline-block;
-      transition: transform 0.3s ease;
-    }
-
-    .search-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 374px;
-      border: 1px solid #ccc;
+    
+    .filter-toggle {
+      background-color: #d778ff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
       border-radius: 30px;
-      overflow: hidden;
-      margin-right: 150px;
-      font-weight: bold; 
-      flex-direction: row;
-    }
-
-    #searchBtn {
-      width: 100px;
-    }
-    
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem;
-      flex-direction: column;
-      margin-left: 15px;
-      margin-right: 15px;
-      margin-top: 15px;
-      border-radius: 10px;
-    }
-  
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-      width: 100%;
-    }
-  
-    .search-container input {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    .search-container button {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    .nav-links {
-      flex-direction: row;
-      gap: 10px;
-      position: absolute;
-      margin: 180px;
-      margin-top: 40px;
-    }
-  
-    .nav-item {
-      margin-right: 0;
-      justify-content: flex-start;
-    }
-  
-    main {
-      display: flex;
-      flex-direction: column;
-      padding-left: 15px;
-      padding-right: 15px;      
-    }
-  
-    aside.filters {
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
-    }
-  
-    .book-list {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      align-items: flex-start;
-      position: relative;
-      overflow: visible;
-      height: auto;
-      padding: 20px;
-      margin-top: -10px;
-    }
-  
-    .book-card {
-      width: 140px;
-    }
-  
-    .book-card img {
-      width: 100%;
-      height: 200px;
-    }
-  
-    footer {
+      font-weight: bold;
+      font-size: 16px;
+      width: 188px;
       text-align: center;
-      padding: 1rem;
+      cursor: pointer;
+      margin-top: 14px;
+      height: 42px;
     }
-      .filter-toggle {
-        display: block;
-      }
-      
-      .filter-toggle {
-        background-color: #d778ff;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        font-size: 16px;
-        width: 188px;
-        text-align: center;
-        cursor: pointer;
-        margin-top: 14px;
-        height: 42px;
-      }
-    
-      .filters {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-        background-color: #f8f8f8;
-        padding: 1rem;
-        border-radius: 10px;
-        width: 100%;
-        position: relative;
-      }
-    
-      .filters.active {
-        display: flex;
-      }
+  
+    .filters {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      background-color: #f8f8f8;
+      padding: 1rem;
+      border-radius: 10px;
+      width: 100%;
+      position: relative;
+    }
+  
+    .filters.active {
+      display: flex;
+    }
 
-      #book-category {
-        margin-top: 15px;
-        height: 42px;
-        width: 188px;
-      }
+    #book-category {
+      margin-top: 15px;
+      height: 42px;
+      width: 188px;
+    }
 
-      .buttons {
-        display: flex;
-        flex-direction: row;
-      }
-  }
+    .buttons {
+      display: flex;
+      flex-direction: row;
+    }
+}
