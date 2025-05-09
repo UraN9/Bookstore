@@ -1,1 +1,1 @@
-# Bookstore
+# Bookstore - вебсайт про книгарню
